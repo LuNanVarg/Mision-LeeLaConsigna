@@ -1,13 +1,14 @@
 # 7mo TICs | Misión: ¡Leé la Consigna! 🚀
 
-Panel interactivo para estudiantes de 7mo grado: pautas de corrección, checklist y guía de lectura de consignas para proyectos de TICs y Ciencias Naturales.
+Plataforma interactiva para estudiantes de 7mo grado con pautas de corrección, checklist y guía paso a paso para completar los trabajos pendientes.
 
-Recurso interactivo diseñado para proyectar en el aula y compartir con los alumnos de 7mo grado.
+### 🌐 Ingresen acá:
+👉 **[https://mision-lee-la-consigna.vercel.app/](https://mision-lee-la-consigna.vercel.app/)**
+
+---
 
 ### 📌 Contenido de la guía:
-- **1. Organizaciones (PyME):** Pautas para investigar las 6 categorías actuales y orden de entrega.
-- **2. Detectives del Entorno (Cs. Naturales):** Identificación de especies urbanas vs. errores comunes.
-- **3. Filamentos para Impresión 3D:** Tabla comparativa de materiales y justificación del uso de PLA en la escuela.
-- **Checklist interactiva:** Lista de control paso a paso previa a la entrega final.
-
-Desarrollado con HTML5, Tailwind CSS y Lucide Icons. Desplegado en Vercel.
+* **Organizaciones (PyME):** Las 6 categorías actuales explicadas (OpenAI hoy es gran empresa) y los puntos 1 al 10.
+* **Detectives del Entorno:** Especies de nuestro barrio o vereda (no animales polares ni de selva) y las 5 preguntas completas.
+* **Filamentos 3D:** Tabla de materiales y justificación del uso de PLA en la escuela.
+* **Checklist interactiva:** Lista de control para tildar antes de presionar "Entregar".
