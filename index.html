@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7mo TICs | Misión: ¡Leé la Consigna!</title>
+  <!-- Tailwind CSS por CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Iconos Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .tab-btn.active {
+      background-color: #4f46e5;
+      color: white;
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col selection:bg-indigo-500 selection:text-white">
+
+  <!-- ENCABEZADO SUPERIOR -->
+  <header class="bg-slate-800/90 border-b border-slate-700 sticky top-0 z-50 backdrop-blur">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="p-2.5 bg-indigo-600 rounded-xl shadow-lg shadow-indigo-600/30">
+          <i data-lucide="check-check" class="w-6 h-6 text-white"></i>
+        </span>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-indigo-400">7mo Grado · TICs & Ciencias</span>
+          <h1 class="text-lg sm:text-xl font-extrabold text-white leading-tight">Misión: ¡Leé la Consigna! 🚀</h1>
+        </div>
+      </div>
+      <button onclick="toggleFullscreen()" class="px-3.5 py-1.5 bg-slate-700 hover:bg-slate-600 rounded-xl text-xs font-semibold flex items-center gap-2 transition border border-slate-600">
+        <i data-lucide="maximize" class="w-4 h-4"></i> <span class="hidden sm:inline">Pantalla completa</span>
+      </button>
+    </div>
+
+    <!-- Pestañas de Navegación -->
+    <div class="max-w-6xl mx-auto px-4 flex gap-2 overflow-x-auto pb-2 pt-2 text-sm font-semibold">
+      <button onclick="switchTab('inicio')" id="btn-inicio" class="tab-btn active px-4 py-2 rounded-xl transition flex items-center gap-2 whitespace-nowrap">
+        <i data-lucide="compass" class="w-4 h-4"></i> El Aula Hoy
+      </button>
+      <button onclick="switchTab('pyme')" id="btn-pyme" class="tab-btn px-4 py-2 rounded-xl transition flex items-center gap-2 bg-slate-800 text-slate-300 hover:bg-slate-700 whitespace-nowrap">
+        <i data-lucide="briefcase" class="w-4 h-4"></i> 1. Organizaciones
+      </button>
+      <button onclick="switchTab('ciencias')" id="btn-ciencias" class="tab-btn px-4 py-2 rounded-xl transition flex items-center gap-2 bg-slate-800 text-slate-300 hover:bg-slate-700 whitespace-nowrap">
+        <i data-lucide="search" class="w-4 h-4"></i> 2. Detectives del Entorno
+      </button>
+      <button onclick="switchTab('3d')" id="btn-3d" class="tab-btn px-4 py-2 rounded-xl transition flex items-center gap-2 bg-slate-800 text-slate-300 hover:bg-slate-700 whitespace-nowrap">
+        <i data-lucide="layers" class="w-4 h-4"></i> 3. Filamentos 3D
+      </button>
+      <button onclick="switchTab('checklist')" id="btn-checklist" class="tab-btn px-4 py-2 rounded-xl transition flex items-center gap-2 bg-slate-800 text-slate-300 hover:bg-slate-700 whitespace-nowrap">
+        <i data-lucide="list-checks" class="w-4 h-4"></i> Checklist de Entrega
+      </button>
+    </div>
+  </header>
+
+  <!-- CONTENEDOR CENTRAL -->
+  <main class="max-w-6xl mx-auto p-4 sm:p-6 flex-grow w-full">
+
+    <!-- SECCIÓN: INICIO / EL AULA HOY -->
+    <section id="tab-inicio" class="space-y-6">
+      <div class="bg-gradient-to-r from-indigo-900/60 via-purple-900/50 to-slate-800 border border-indigo-700/50 p-6 sm:p-8 rounded-2xl shadow-xl">
+        <div class="inline-block px-3 py-1 bg-amber-500/20 border border-amber-500/40 text-amber-300 rounded-full text-xs font-bold mb-3">
+          ⚠️ ALERTA DOCENTE
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-3">Chicos: diseñan genial, ¡pero hay que leer las consignas! 🛑</h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl">
+          Tienen un manejo excelente de Canva, colores y memes, pero en las entregas nos fuimos de tema: pedimos un animal de la ciudad y trajeron yaguaretés y pingüinos polares; pedimos 6 organizaciones y que entregamos? 
+          <strong>Hoy frenamos la pelota, corregimos lo que falta y dejamos las 3 tareas impecables.</strong>
+        </p>
+      </div>
+
+      <!-- Tarjetas de las 3 Tareas -->
+      <div class="grid md:grid-cols-3 gap-4 sm:gap-6">
+        <div class="bg-slate-800/90 border border-slate-700 p-5 rounded-2xl flex flex-col justify-between hover:border-slate-600 transition">
+          <div>
+            <div class="p-3 bg-indigo-500/20 text-indigo-400 rounded-xl w-fit mb-3"><i data-lucide="building-2" class="w-6 h-6"></i></div>
+            <h3 class="font-bold text-lg text-white mb-1">1. Organizaciones</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">6 categorías actuales. Ojo con OpenAI (hoy es gran empresa). Desarrollar del punto 1 al 10 en orden.</p>
+          </div>
+          <button onclick="switchTab('pyme')" class="mt-4 text-xs font-bold text-indigo-400 hover:text-indigo-300 flex items-center gap-1.5 pt-3 border-t border-slate-700/60">
+            Ver pautas de corrección &rarr;
+          </button>
+        </div>
+
+        <div class="bg-slate-800/90 border border-slate-700 p-5 rounded-2xl flex flex-col justify-between hover:border-slate-600 transition">
+          <div>
+            <div class="p-3 bg-emerald-500/20 text-emerald-400 rounded-xl w-fit mb-3"><i data-lucide="paw-print" class="w-6 h-6"></i></div>
+            <h3 class="font-bold text-lg text-white mb-1">2. Detectives del Entorno</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">Animal o planta de nuestro barrio/ciudad o en América. Responder las 5 preguntas guía y limpiar la plantilla de Canva.</p>
+          </div>
+          <button onclick="switchTab('ciencias')" class="mt-4 text-xs font-bold text-emerald-400 hover:text-emerald-300 flex items-center gap-1.5 pt-3 border-t border-slate-700/60">
+            Ver qué especies sí van &rarr;
+          </button>
+        </div>
+
+        <div class="bg-slate-800/90 border border-slate-700 p-5 rounded-2xl flex flex-col justify-between hover:border-slate-600 transition">
+          <div>
+            <div class="p-3 bg-amber-500/20 text-amber-400 rounded-xl w-fit mb-3"><i data-lucide="printer" class="w-6 h-6"></i></div>
+            <h3 class="font-bold text-lg text-white mb-1">3. Filamentos para 3D</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">Completar la ficha con los 6 materiales (PLA, ABS, PETG, etc.) y la conclusión obligatoria con el PLA.</p>
+          </div>
+          <button onclick="switchTab('3d')" class="mt-4 text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1.5 pt-3 border-t border-slate-700/60">
+            Ver tabla de materiales &rarr;
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: TAREA 1 ORGANIZACIONES -->
+    <section id="tab-pyme" class="hidden space-y-6">
+      <div class="bg-slate-800 border border-slate-700 p-6 rounded-2xl">
+        <h2 class="text-xl font-bold flex items-center gap-2 text-indigo-300">
+          <i data-lucide="briefcase" class="w-6 h-6 text-indigo-400"></i> Tarea: Investigo, descubro y propongo
+        </h2>
+        <p class="text-sm text-slate-300 mt-1">Elegir una organización por categoría según su <strong>estado y tamaño actual</strong>.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Las 6 categorías -->
+        <div class="bg-slate-800/80 border border-slate-700 p-5 rounded-2xl space-y-3">
+          <h3 class="font-bold text-sm text-slate-200 uppercase tracking-wider mb-2">Las 6 categorías obligatorias:</h3>
+          <ul class="text-sm space-y-2 text-slate-300">
+            <li class="p-2.5 bg-slate-700/40 rounded-xl flex items-center gap-3">
+              <i data-lucide="lightbulb" class="w-5 h-5 text-amber-400 shrink-0"></i>
+              <div><strong>1. Emprendimiento:</strong> Proyecto o negocio que está arrancando hoy.</div>
+            </li>
+            <li class="p-2.5 bg-slate-700/40 rounded-xl flex items-center gap-3">
+              <i data-lucide="store" class="w-5 h-5 text-sky-400 shrink-0"></i>
+              <div><strong>2. PyME:</strong> Pequeña o mediana empresa consolidada.</div>
+            </li>
+            <li class="p-2.5 bg-slate-700/40 rounded-xl flex items-center gap-3">
+              <i data-lucide="globe" class="w-5 h-5 text-indigo-400 shrink-0"></i>
+              <div><strong>3. Gran empresa:</strong> Corporación multinacional o masiva.</div>
+            </li>
+            <li class="p-2.5 bg-slate-700/40 rounded-xl flex items-center gap-3">
+              <i data-lucide="heart" class="w-5 h-5 text-rose-400 shrink-0"></i>
+              <div><strong>4. ONG:</strong> Organización civil sin fines de lucro.</div>
+            </li>
+            <li class="p-2.5 bg-slate-700/40 rounded-xl flex items-center gap-3">
+              <i data-lucide="users" class="w-5 h-5 text-teal-400 shrink-0"></i>
+              <div><strong>5. Cooperativa:</strong> Los socios y trabajadores son los dueños.</div>
+            </li>
+            <li class="p-2.5 bg-slate-700/40 rounded-xl flex items-center gap-3">
+              <i data-lucide="landmark" class="w-5 h-5 text-orange-400 shrink-0"></i>
+              <div><strong>6. Organismo público:</strong> Del Estado o internacional (ONU).</div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Lo que hay que corregir -->
+        <div class="space-y-4">
+          <div class="bg-amber-950/40 border border-amber-600/50 p-5 rounded-2xl">
+            <div class="flex items-center gap-2 text-amber-400 font-bold mb-2">
+              <i data-lucide="alert-triangle" class="w-5 h-5"></i> ¡Ojo con OpenAI!
+            </div>
+            <p class="text-xs sm:text-sm text-amber-200/90 leading-relaxed">
+              OpenAI nació en 2015 como un laboratorio emergente, pero <strong>hoy en día es una Gran Empresa multinacional</strong> valorada en miles de millones de dólares. Si la pusieron en "Emprendimiento", deben cambiarla por un proyecto o negocio que esté naciendo hoy.
+            </p>
+          </div>
+
+          <div class="bg-slate-800/80 border border-slate-700 p-5 rounded-2xl">
+            <h4 class="font-bold text-sm text-slate-200 mb-2">Estructura que debe tener cada caso:</h4>
+            <p class="text-xs text-slate-300 leading-relaxed mb-3">
+              No resuman todo en un párrafo mezclado. Cada organización debe responder por separado:
+            </p>
+            <div class="text-xs grid grid-cols-2 gap-2 text-slate-400">
+              <span class="p-1.5 bg-slate-700/40 rounded">1. Nombre y Logo</span>
+              <span class="p-1.5 bg-slate-700/40 rounded">2. Tipo de org.</span>
+              <span class="p-1.5 bg-slate-700/40 rounded">3. ¿Qué hace?</span>
+              <span class="p-1.5 bg-slate-700/40 rounded">4. ¿Para qué existe?</span>
+              <span class="p-1.5 bg-slate-700/40 rounded">5. Beneficiarios</span>
+              <span class="p-1.5 bg-slate-700/40 rounded">6. Historia y evolución</span>
+              <span class="p-1.5 bg-slate-700/40 rounded">7. Qué te llamó la atención</span>
+              <span class="p-1.5 bg-slate-700/40 rounded">8. Si estuvieras a cargo</span>
+              <span class="p-1.5 bg-slate-700/40 rounded">9. Qué aprendiste</span>
+              <span class="p-1.5 bg-slate-700/40 rounded">10. Fuentes y Prompt de IA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: TAREA 2 CIENCIAS NATURALES -->
+    <section id="tab-ciencias" class="hidden space-y-6">
+      <div class="bg-slate-800 border border-slate-700 p-6 rounded-2xl">
+        <h2 class="text-xl font-bold flex items-center gap-2 text-emerald-300">
+          <i data-lucide="leaf" class="w-6 h-6 text-emerald-400"></i> Tarea: Detectives del Entorno Quienes no entregaron. 
+        </h2>
+        <p class="text-sm text-slate-300 mt-1">Investigar un ser vivo que viva en nuestra ciudad, barrio o vereda.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <!-- Válidos -->
+        <div class="bg-emerald-950/30 border border-emerald-600/40 p-5 rounded-2xl">
+          <h3 class="font-bold text-emerald-300 text-sm sm:text-base mb-3 flex items-center gap-2">
+            <i data-lucide="check-circle-2" class="w-5 h-5"></i> Especies que SÍ cumplen la consigna:
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-300 mb-3">Seres vivos que podemos observar cerca de casa o del colegio:</p>
+          <ul class="text-xs sm:text-sm space-y-2 text-emerald-200">
+            <li class="flex items-center gap-2"><i data-lucide="bird" class="w-4 h-4"></i> <strong>Aves:</strong> Horneros, palomas, gorriones, benteveos, torcazas.</li>
+            <li class="flex items-center gap-2"><i data-lucide="bug" class="w-4 h-4"></i> <strong>Insectos:</strong> Abejas, mariposas, hormigas negras, vaquitas de San Antonio.</li>
+            <li class="flex items-center gap-2"><i data-lucide="sprout" class="w-4 h-4"></i> <strong>Plantas / Árboles:</strong> Jacarandá, plátano, ceibo, lapacho, helechos.</li>
+            <li class="flex items-center gap-2"><i data-lucide="shield" class="w-4 h-4"></i> <strong>Otros:</strong> Sapos comunes, lagartijas de pared, murciélagos urbanos.</li>
+          </ul>
+        </div>
+
+        <!-- No válidos -->
+        <div class="bg-rose-950/30 border border-rose-600/40 p-5 rounded-2xl">
+          <h3 class="font-bold text-rose-300 text-sm sm:text-base mb-3 flex items-center gap-2">
+            <i data-lucide="x-circle" class="w-5 h-5"></i> Lo que Falta a los que entregarón:
+          </h3>
+          <ul class="text-xs sm:text-sm space-y-2.5 text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-rose-400 font-bold">❌ Falta:</span> Leer
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-400 font-bold">❌ Falta:</span> Identificar lo que quieren expresar
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-400 font-bold">❌ Falta:</span> Sus palabras
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-rose-400 font-bold">❌ Dejar textos en inglés de Canva:</span> Si usan plantilla, borren los textos predeterminados de ejemplo.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-slate-800/80 border border-slate-700 p-5 rounded-2xl">
+        <h4 class="font-bold text-sm text-slate-200 mb-2">Las 5 preguntas que deben contestar sí o sí:</h4>
+        <div class="grid sm:grid-cols-5 gap-2 text-xs text-center">
+          <div class="p-3 bg-slate-700/40 rounded-xl"><strong>1.</strong> ¿Por qué lo elegiste?</div>
+          <div class="p-3 bg-slate-700/40 rounded-xl"><strong>2.</strong> ¿Dónde vive y qué necesita?</div>
+          <div class="p-3 bg-slate-700/40 rounded-xl"><strong>3.</strong> ¿Qué función cumple?</div>
+          <div class="p-3 bg-slate-700/40 rounded-xl"><strong>4.</strong> ¿Qué cambios sufrió con la ciudad?</div>
+          <div class="p-3 bg-slate-700/40 rounded-xl"><strong>5.</strong> ¿Qué problema enfrenta y cómo ayudar?</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: TAREA 3 FILAMENTOS 3D -->
+    <section id="tab-3d" class="hidden space-y-6">
+      <div class="bg-slate-800 border border-slate-700 p-6 rounded-2xl">
+        <h2 class="text-xl font-bold flex items-center gap-2 text-amber-300">
+          <i data-lucide="printer" class="w-6 h-6 text-amber-400"></i> Tarea: Filamentos para Impresión 3D
+        </h2>
+        <p class="text-sm text-slate-300 mt-1">Completar la tabla comparativa con los 6 materiales requeridos y la conclusión.</p>
+      </div>
+
+      <div class="overflow-x-auto bg-slate-800 rounded-2xl border border-slate-700 shadow-md">
+        <table class="w-full text-left text-xs sm:text-sm">
+          <thead class="bg-slate-700/60 text-slate-200 uppercase text-xs tracking-wider">
+            <tr>
+              <th class="p-3.5">Filamento</th>
+              <th class="p-3.5">Características Principales</th>
+              <th class="p-3.5">Dificultad de Impresión</th>
+              <th class="p-3.5">Uso Típico</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-700 text-slate-300">
+            <tr class="hover:bg-slate-700/20"><td class="p-3.5 font-bold text-emerald-400">PLA</td><td class="p-3.5">Biodegradable (origen vegetal), no desprende gases tóxicos.</td><td class="p-3.5"><span class="px-2 py-0.5 bg-emerald-950 text-emerald-300 rounded-full text-xs">Baja</span></td><td class="p-3.5">Escuelas, maquetas, figuras decorativas.</td></tr>
+            <tr class="hover:bg-slate-700/20"><td class="p-3.5 font-bold text-rose-400">ABS</td><td class="p-3.5">Muy resistente a golpes y altas temperaturas. Necesita cama caliente.</td><td class="p-3.5"><span class="px-2 py-0.5 bg-rose-950 text-rose-300 rounded-full text-xs">Media / Alta</span></td><td class="p-3.5">Piezas mecánicas, carcasas de electrodomésticos, legos.</td></tr>
+            <tr class="hover:bg-slate-700/20"><td class="p-3.5 font-bold text-sky-400">PETG</td><td class="p-3.5">Combina la facilidad del PLA con la resistencia del ABS. Resistente al agua.</td><td class="p-3.5"><span class="px-2 py-0.5 bg-sky-950 text-sky-300 rounded-full text-xs">Media</span></td><td class="p-3.5">Botellas, recipientes, piezas para exteriores.</td></tr>
+            <tr class="hover:bg-slate-700/20"><td class="p-3.5 font-bold text-purple-400">TPU</td><td class="p-3.5">Termoplástico elástico y flexible tipo goma sintética.</td><td class="p-3.5"><span class="px-2 py-0.5 bg-purple-950 text-purple-300 rounded-full text-xs">Media / Alta</span></td><td class="p-3.5">Fundas de celular, ruedas flexibles, juntas aislantes.</td></tr>
+            <tr class="hover:bg-slate-700/20"><td class="p-3.5 font-bold text-orange-400">ASA</td><td class="p-3.5">Resistencia extrema a los rayos ultravioleta (sol) e intemperie.</td><td class="p-3.5"><span class="px-2 py-0.5 bg-orange-950 text-orange-300 rounded-full text-xs">Media / Alta</span></td><td class="p-3.5">Accesorios para autos, carteles y piezas al aire libre.</td></tr>
+            <tr class="hover:bg-slate-700/20"><td class="p-3.5 font-bold text-teal-400">NYLON</td><td class="p-3.5">Extremadamente fuerte, flexible y con mínimo desgaste por fricción.</td><td class="p-3.5"><span class="px-2 py-0.5 bg-teal-950 text-teal-300 rounded-full text-xs">Alta</span></td><td class="p-3.5">Engranajes de alta fricción, piezas industriales, herramientas.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="bg-amber-950/30 border border-amber-600/40 p-4 rounded-xl flex items-start gap-3">
+        <i data-lucide="star" class="w-6 h-6 text-amber-400 shrink-0 mt-0.5"></i>
+        <div>
+          <h4 class="font-bold text-amber-300 text-sm">Pista para la conclusión obligatoria:</h4>
+          <p class="text-xs sm:text-sm text-slate-300 mt-1">
+            En la ficha debés responder: <em>"¿Cuál de estos filamentos te parece más adecuado para comenzar a trabajar en la escuela? ¿Por qué?"</em>. Recordá que filamento usamos y vamos a seguir usando.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: CHECKLIST DE ENTREGA -->
+    <section id="tab-checklist" class="hidden space-y-6">
+      <div class="bg-slate-800 border border-slate-700 p-6 rounded-2xl">
+        <h2 class="text-xl font-bold flex items-center gap-2 text-indigo-300">
+          <i data-lucide="check-square" class="w-6 h-6 text-indigo-400"></i> Checklist de Control: Antes de hacer clic en "Entregar"
+        </h2>
+        <p class="text-sm text-slate-300 mt-1">Tildá cada punto en tu pantalla para asegurarte de que tu trabajo esté completo y aprobado.</p>
+      </div>
+
+      <div class="space-y-3" id="checklist-items">
+        <label class="flex items-start gap-3 p-3.5 bg-slate-800/80 rounded-xl cursor-pointer hover:bg-slate-700/60 border border-slate-700 transition">
+          <input type="checkbox" class="w-5 h-5 accent-indigo-600 rounded mt-0.5">
+          <div class="text-xs sm:text-sm">
+            <strong class="text-white block">Organizaciones: 6 categorías actuales</strong>
+            <span class="text-slate-400">Emprendimiento, PyME, Gran empresa, ONG, Cooperativa y Organismo Público.</span>
+          </div>
+        </label>
+
+        <label class="flex items-start gap-3 p-3.5 bg-slate-800/80 rounded-xl cursor-pointer hover:bg-slate-700/60 border border-slate-700 transition">
+          <input type="checkbox" class="w-5 h-5 accent-indigo-600 rounded mt-0.5">
+          <div class="text-xs sm:text-sm">
+            <strong class="text-white block">Emprendimiento que arranca hoy (NO OpenAI)</strong>
+            <span class="text-slate-400">OpenAI hoy en día es una multinacional; debés elegir un proyecto o negocio emergente.</span>
+          </div>
+        </label>
+
+        <label class="flex items-start gap-3 p-3.5 bg-slate-800/80 rounded-xl cursor-pointer hover:bg-slate-700/60 border border-slate-700 transition">
+          <input type="checkbox" class="w-5 h-5 accent-indigo-600 rounded mt-0.5">
+          <div class="text-xs sm:text-sm">
+            <strong class="text-white block">Organizaciones: puntos 1 al 10 desarrollados</strong>
+            <span class="text-slate-400">No un solo párrafo continuo. Incluir propuesta de mejora ("Si estuviera a cargo...").</span>
+          </div>
+        </label>
+
+        <label class="flex items-start gap-3 p-3.5 bg-slate-800/80 rounded-xl cursor-pointer hover:bg-slate-700/60 border border-slate-700 transition">
+          <input type="checkbox" class="w-5 h-5 accent-indigo-600 rounded mt-0.5">
+          <div class="text-xs sm:text-sm">
+            <strong class="text-white block">Detectives: Ser vivo de la ciudad o barrio</strong>
+            <span class="text-slate-400">Animal o planta observable en veredas o plazas (nada de pingüinos antárticos ni yaguaretés).</span>
+          </div>
+        </label>
+
+        <label class="flex items-start gap-3 p-3.5 bg-slate-800/80 rounded-xl cursor-pointer hover:bg-slate-700/60 border border-slate-700 transition">
+          <input type="checkbox" class="w-5 h-5 accent-indigo-600 rounded mt-0.5">
+          <div class="text-xs sm:text-sm">
+            <strong class="text-white block">Detectives: Las 5 preguntas respondidas</strong>
+            <span class="text-slate-400">Por qué lo elegiste, hábitat, rol en la naturaleza, cambios por la ciudad y cómo ayudarlo.</span>
+          </div>
+        </label>
+
+        <label class="flex items-start gap-3 p-3.5 bg-slate-800/80 rounded-xl cursor-pointer hover:bg-slate-700/60 border border-slate-700 transition">
+          <input type="checkbox" class="w-5 h-5 accent-indigo-600 rounded mt-0.5">
+          <div class="text-xs sm:text-sm">
+            <strong class="text-white block">Plantillas de Canva limpias y corregidas</strong>
+            <span class="text-slate-400">Borrar textos en inglés de muestra, direcciones falsas o links genéricos.</span>
+          </div>
+        </label>
+
+        <label class="flex items-start gap-3 p-3.5 bg-slate-800/80 rounded-xl cursor-pointer hover:bg-slate-700/60 border border-slate-700 transition">
+          <input type="checkbox" class="w-5 h-5 accent-indigo-600 rounded mt-0.5">
+          <div class="text-xs sm:text-sm">
+            <strong class="text-white block">Fuentes web y prompts de IA declarados</strong>
+            <span class="text-slate-400">Poner los enlaces reales de los sitios consultados (Google Chrome es el navegador, no la fuente) y el prompt de IA.</span>
+          </div>
+        </label>
+
+        <label class="flex items-start gap-3 p-3.5 bg-slate-800/80 rounded-xl cursor-pointer hover:bg-slate-700/60 border border-slate-700 transition">
+          <input type="checkbox" class="w-5 h-5 accent-indigo-600 rounded mt-0.5">
+          <div class="text-xs sm:text-sm">
+            <strong class="text-white block">Ficha 3D: Tabla de filamentos y conclusión con PLA</strong>
+            <span class="text-slate-400">Completar las características, dificultad y uso típico de los 6 materiales.</span>
+          </div>
+        </label>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="border-t border-slate-800 py-4 text-center text-xs text-slate-500">
+    7mo Grado · TICs y Ciencias Naturales · 2026 
+  </footer>
+
+  <!-- SCRIPT INTERACTIVO -->
+  <script>
+    lucide.createIcons();
+
+    function switchTab(tabId) {
+      const tabs = ['inicio', 'pyme', 'ciencias', '3d', 'checklist'];
+      tabs.forEach(id => {
+        const el = document.getElementById('tab-' + id);
+        const btn = document.getElementById('btn-' + id);
+        if (id === tabId) {
+          el.classList.remove('hidden');
+          btn.classList.add('active');
+          btn.classList.remove('bg-slate-800', 'text-slate-300');
+        } else {
+          el.classList.add('hidden');
+          btn.classList.remove('active');
+          btn.classList.add('bg-slate-800', 'text-slate-300');
+        }
+      });
+      lucide.createIcons();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(() => {});
+      } else {
+        document.exitFullscreen().catch(() => {});
+      }
+    }
+  </script>
+</body>
+</html>
